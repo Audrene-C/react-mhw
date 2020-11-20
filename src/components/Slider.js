@@ -16,13 +16,11 @@ const Slider = (props) => {
                 return (
                     <Carousel.Item key={i} onClick={() => props.changeMonster(item)}>
                         <img
-                        className="d-block w-20"
+                        className="d-block w-25"
                         src={thumbnails[image].default}
                         alt={item.name}
                         />
-                        <Carousel.Caption>
-                        <h3>{item.name}</h3>
-                        </Carousel.Caption>
+                        <p>{item.name}</p>
                     </Carousel.Item>
                 )
             })

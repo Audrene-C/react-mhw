@@ -3,11 +3,13 @@ import Main from './components/Main';
 import Slider from './components/Slider';
 import axios from 'axios';
 import './App.css';
+import Specie from './components/Specie';
 
 const App = () => {
   //state of my component
   const [monsters, setMonsters] = useState([])
   const [currentMonster, setCurrentMonster] = useState({})
+  const [currentSpecie, setCurrentSpecie] = useState([])
 
   //my fetch request to the server
   async function getMonster() {
@@ -23,6 +25,7 @@ const App = () => {
     //set our state with the array of objects we get
     setMonsters(monstersTable)
     setCurrentMonster(monstersTable[0])
+    setCurrentSpecie(monstersTable)
   }
 
   //hook to use getMonster() at the loading of the page
@@ -36,10 +39,24 @@ const App = () => {
     setCurrentMonster(monster)
   }
 
+  const changeSpecie = (specie) => {
+    console.log('changeSpecie is triggered')
+    if (specie === "all") setCurrentSpecie(monsters);
+    else {
+      let newCurrentSpecie = []
+      monsters.forEach((item) => {
+        if (item.species === specie) newCurrentSpecie.push(item);
+      })
+      setCurrentSpecie(newCurrentSpecie)
+    }
+    changeMonster(currentSpecie[0])
+  }
+
   return (
     <React.Fragment>
       <Main monster={currentMonster}/>
-      <Slider monsters={monsters} changeMonster={changeMonster}/>
+      <Specie changeSpecie={changeSpecie}/>
+      <Slider monsters={currentSpecie} changeMonster={changeMonster}/>
     </React.Fragment>
   );
 }
