@@ -3,11 +3,11 @@ import Main from './components/Main';
 import Slider from './components/Slider';
 import axios from 'axios';
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   //state of my component
   const [monsters, setMonsters] = useState([])
+  const [currentMonster, setCurrentMonster] = useState({})
 
   //my fetch request to the server
   async function getMonster() {
@@ -16,12 +16,13 @@ const App = () => {
     const monstersTable = []
     result.data.map((item) => {
         //keep only large monsters for our wiki
-        if (item.type === 'large') {
+        if (item.type === "large" && !(item.species === "relict")) {
             monstersTable.push(item)
         }
     })
     //set our state with the array of objects we get
     setMonsters(monstersTable)
+    setCurrentMonster(monstersTable[0])
   }
 
   //hook to use getMonster() at the loading of the page
@@ -30,11 +31,16 @@ const App = () => {
     getMonster()
   }, [])
 
+  const changeMonster = (monster) => {
+    console.log('changeMonster is triggered')
+    setCurrentMonster(monster)
+  }
+
   return (
-    <div className="App">
-      <Main monsters={monsters} />
-      <Slider monsters={monsters} />
-    </div>
+    <React.Fragment>
+      <Main monster={currentMonster}/>
+      <Slider monsters={monsters} changeMonster={changeMonster}/>
+    </React.Fragment>
   );
 }
 
