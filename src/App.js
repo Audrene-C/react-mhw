@@ -49,7 +49,6 @@ const App = () => {
       })
       setCurrentSpecie(newCurrentSpecie)
     }
-    changeMonster(currentSpecie[0])
   }
 
   return (

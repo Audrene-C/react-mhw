@@ -7,8 +7,10 @@ img:hover {
     position: relative;
 }
 
-.carousel-inner {
-    display: flex;
+.carousel-item {
+    width: 33%;
+    margin-right: 0%;
+    padding: 5vw;
 }
 
 /* show 3 items */

@@ -14,9 +14,9 @@ const Slider = (props) => {
             return props.monsters.map((item, i) => {
                 let image = utils.toSnakeCase(item.name)+".png"
                 return (
-                    <Carousel.Item key={i} onClick={() => props.changeMonster(item)}>
+                    <Carousel.Item className="w-33" key={i} onClick={() => props.changeMonster(item)}>
                         <img
-                        className="d-block w-25"
+                        className="d-block w-100"
                         src={thumbnails[image].default}
                         alt={item.name}
                         />
