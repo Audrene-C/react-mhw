@@ -20,7 +20,7 @@ const Slider = (props) => {
                         src={thumbnails[image].default}
                         alt={item.name}
                         />
-                        <p>{item.name}</p>
+                        <Carousel.Caption>{item.name}</Carousel.Caption>
                     </Carousel.Item>
                 )
             })

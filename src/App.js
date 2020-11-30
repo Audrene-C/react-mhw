@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './App.css';
 import Header from './components/Header';
 import Main from './components/Main';
 import Specie from './components/Specie';

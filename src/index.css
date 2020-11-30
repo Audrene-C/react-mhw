@@ -1,13 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+
+:root {
+  --primary: rgba(76,120,31);
+  --secondary: rgba(111,105,107);
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  background: url(https://wallpapercave.com/wp/XqRBXyO.jpg) no-repeat center center fixed; 
+  background-size: cover;
+  font-family: 'Rock Salt', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  border: none!important;
+}
+
+.header, .card, .nav, .carousel, .footer {
+  background-color: transparent;
 }

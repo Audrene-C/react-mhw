@@ -23,11 +23,11 @@ const Main = (props) => {
                     <Card.Body>
                         <Card.Title>{monster.name}</Card.Title>
                         <Card.Text>
-                            Specie : {monster.species}
+                            <b>Specie :</b> {monster.species}
                             <br></br>
-                            Description : {monster.description}
+                            <b>Description :</b> {monster.description}
                             <br></br>
-                            Location : {locations()}
+                            <b>Location :</b> {locations()}
                         </Card.Text>
                         <Weaknesses weak={monster.weaknesses} />
                     </Card.Body>

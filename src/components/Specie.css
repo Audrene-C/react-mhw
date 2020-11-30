@@ -1,0 +1,11 @@
+.nav {
+    justify-content: center;
+}
+
+.nav-item > a {
+    color: rgba(76,120,31);
+}
+
+.nav-link.active {
+    background-color: transparent!important;
+}

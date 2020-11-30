@@ -1,9 +1,15 @@
 .carousel, .carousel-inner, .carousel-control-prev, .carousel-control-next, .carousel-item {
     height: 20vh;
-  }
+}
 
-.carousel-caption > h3 {
-    color: black;
+.carousel {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+.carousel-caption {
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-size: larger;
 }
 
 img:hover {
@@ -19,6 +25,16 @@ img:hover {
 .carousel-item>img {
     height: 100%;
     margin: auto;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    background-color: rgba(76,120,31);
+    opacity: 0.3;
+    width: 5%;
+}
+
+.carousel-control-prev:hover, .carousel-control-next:hover {
+    opacity: 0.5;
 }
 
 /* show 3 items */

@@ -30,10 +30,10 @@ const Weaknesses = (props) => {
     return (
         <Row>
             <Col>
-                <ListGroup variant="flush">{weakTo("element")}</ListGroup>
+                <ListGroup>{weakTo("element")}</ListGroup>
             </Col>
             <Col>
-                <ListGroup variant="flush">{weakTo("status")}</ListGroup>
+                <ListGroup>{weakTo("status")}</ListGroup>
             </Col>
         </Row>
     )
