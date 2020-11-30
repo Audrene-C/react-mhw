@@ -19,3 +19,6 @@ export const thumbnails = importAll(require.context('./thumbnails', false, /\.(p
 
 //import images in the folder images making use of webpack functionalities
 export const images = importAll(require.context('./images', false, /\.(png|jpe?g|svg)$/));
+
+//import images in the folder weaknesses making use of webpack functionalities
+export const weaknesses = importAll(require.context('./weaknesses', false, /\.(png|jpe?g|svg)$/));

@@ -20,7 +20,7 @@ const Slider = (props) => {
                         src={thumbnails[image].default}
                         alt={item.name}
                         />
-                        <Carousel.Caption>{item.name}</Carousel.Caption>
+                        <Carousel.Caption onClick={() => props.changeMonster(item)}>{item.name}</Carousel.Caption>
                     </Carousel.Item>
                 )
             })
@@ -31,7 +31,7 @@ const Slider = (props) => {
         }
     }
     return (
-        <Carousel interval={null} indicators={false}>
+        <Carousel activeIndex={props.index} onSelect={() => props.handleSelect()} interval={null} indicators={false}>
             {mySlider()}
         </Carousel>
     )

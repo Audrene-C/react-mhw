@@ -9,7 +9,7 @@ const Main = (props) => {
 
     const myCard = () => {
         //check if props.monster is not empty
-        if (!jQuery.isEmptyObject(props.monster)) {   
+        if (!jQuery.isEmptyObject(props.monster)) {
             let monster = props.monster
             let image = utils.toSnakeCase(monster.name)+"_render.png"
             const locations = () => {return monster.locations.map((location, i) => {

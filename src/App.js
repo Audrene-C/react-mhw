@@ -11,6 +11,7 @@ const App = () => {
   const [monsters, setMonsters] = useState([])
   const [currentMonster, setCurrentMonster] = useState({})
   const [currentSpecie, setCurrentSpecie] = useState([])
+  const [index, setIndex] = useState(0)
 
   //my fetch request to the server
   async function getMonster() {
@@ -53,6 +54,11 @@ const App = () => {
       })
       setCurrentSpecie(newCurrentSpecie)
     }
+    setIndex(0)
+  }
+
+  function handleSelect(selectedIndex, e) {
+    setIndex(selectedIndex)
   }
 
   return (
@@ -60,7 +66,7 @@ const App = () => {
       <Header />
       <Main monster={currentMonster}/>
       <Specie changeSpecie={changeSpecie}/>
-      <Slider monsters={currentSpecie} changeMonster={changeMonster}/>
+      <Slider monsters={currentSpecie} changeMonster={changeMonster} index={index} handleSelect={handleSelect}/>
       <Footer />
     </React.Fragment>
   );
