@@ -5,6 +5,7 @@ import './Weaknesses.css';
 const Weaknesses = (props) => {
 
     const weakTo = (x) => {
+        //use x to sorts out the 2 types of weaknesses
         if (x === "element") {
             return props.weak.map((weakness, i) => {
                 if (weakness.element === "fire" || weakness.element === "water" || weakness.element === "thunder" || weakness.element === "ice" || weakness.element === "dragon") {

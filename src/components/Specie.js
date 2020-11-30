@@ -3,6 +3,7 @@ import { Nav } from 'react-bootstrap';
 
 const Specie = (props) => {
 
+    //create our 8 tabs and passe them changeSpecie to be triggered when nav link is clicked on
     return(
         <Nav variant="tabs" defaultActiveKey="all">
             <Nav.Item>

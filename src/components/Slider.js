@@ -16,7 +16,7 @@ const Slider = (props) => {
                 return (
                     <Carousel.Item className="w-33" key={i} onClick={() => props.changeMonster(item)}>
                         <img
-                        className="d-block w-100"
+                        className="d-block"
                         src={thumbnails[image].default}
                         alt={item.name}
                         />
@@ -31,7 +31,7 @@ const Slider = (props) => {
         }
     }
     return (
-        <Carousel interval={null}>
+        <Carousel interval={null} indicators={false}>
             {mySlider()}
         </Carousel>
     )

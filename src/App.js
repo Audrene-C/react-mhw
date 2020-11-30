@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import Main from './components/Main';
-import Slider from './components/Slider';
 import axios from 'axios';
 import './App.css';
+import Header from './components/Header';
+import Main from './components/Main';
 import Specie from './components/Specie';
+import Slider from './components/Slider';
+import Footer from './components/Footer';
 
 const App = () => {
   //state of my component
@@ -34,11 +36,14 @@ const App = () => {
     getMonster()
   }, [])
 
+  //passed to slider to change monster when icon is clicked on
   const changeMonster = (monster) => {
     console.log('changeMonster is triggered')
     setCurrentMonster(monster)
+    console.log(monster)
   }
 
+  //passed to the species tabs to change monsters that are shown in the slider
   const changeSpecie = (specie) => {
     console.log('changeSpecie is triggered')
     if (specie === "all") setCurrentSpecie(monsters);
@@ -53,9 +58,11 @@ const App = () => {
 
   return (
     <React.Fragment>
+      <Header />
       <Main monster={currentMonster}/>
       <Specie changeSpecie={changeSpecie}/>
       <Slider monsters={currentSpecie} changeMonster={changeMonster}/>
+      <Footer />
     </React.Fragment>
   );
 }

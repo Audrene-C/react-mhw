@@ -1,3 +1,22 @@
 .card {
     margin: auto;
 }
+
+.myImage {
+    height: 50vh;
+    text-align: center;
+}
+
+.card-img-top {
+    object-fit: contain;
+    height: 100%;
+}
+
+.card-body {
+    text-align: center;
+}
+
+.card-text > span {
+    margin-left: 1vw;
+    margin-right: 1vw;
+}

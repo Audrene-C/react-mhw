@@ -12,15 +12,22 @@ const Main = (props) => {
         if (!jQuery.isEmptyObject(props.monster)) {   
             let monster = props.monster
             let image = utils.toSnakeCase(monster.name)+"_render.png"
+            const locations = () => {return monster.locations.map((location, i) => {
+                return <span key={i}>{location.name}</span>
+            })}
             return (
-                <Card style={{ width: "75vw" }}>
-                    <Card.Img variant="top" style={{ width: "70vw" }} src={utils.images[image].default} alt={monster.name} />
+                <Card>
+                    <div className="myImage">
+                        <Card.Img variant="top" src={utils.images[image].default} alt={monster.name} />
+                    </div>
                     <Card.Body>
                         <Card.Title>{monster.name}</Card.Title>
                         <Card.Text>
                             Specie : {monster.species}
                             <br></br>
                             Description : {monster.description}
+                            <br></br>
+                            Location : {locations()}
                         </Card.Text>
                         <Weaknesses weak={monster.weaknesses} />
                     </Card.Body>

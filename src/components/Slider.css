@@ -1,3 +1,7 @@
+.carousel, .carousel-inner, .carousel-control-prev, .carousel-control-next, .carousel-item {
+    height: 20vh;
+  }
+
 .carousel-caption > h3 {
     color: black;
 }
@@ -10,7 +14,11 @@ img:hover {
 .carousel-item {
     width: 33%;
     margin-right: 0%;
-    padding: 5vw;
+}
+
+.carousel-item>img {
+    height: 100%;
+    margin: auto;
 }
 
 /* show 3 items */
